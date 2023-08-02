@@ -1,0 +1,70 @@
+# snippet 1
+def my_func(x, y):
+
+    return x**y
+
+
+# snippet 1 - corrected code
+def calc_exponents(base, power):
+    """Calculates exponents using 'base' and 'power' value inputs.
+
+    Args:
+        base: The value to be multipled by 'power' number of times.
+        power: The amount of times 'base' will be multiples by itself.
+    Returns:
+        The computation result ofbase^power
+    """
+    return base**power
+# ---------------------------------------------------------------
+# snippet #2 # Pull request 2
+def create_odds(num):
+    """Creates a list of len(num) of random odd numbers between 1 and 1000"""
+    num_list = []
+    for i in range(0, num):
+        new_num = 2
+        while new_num % 2 == 0:
+            new_num = random.randint(1, 10)
+        num_list.append(new_num)
+    return num_list
+
+
+def create_evens(num):
+    """Creates a list of len(num) of random even numbers between 1 and 1000"""
+    num_list = []
+    for i in range(0, num):
+        new_num = 1
+        while new_num % 2 != 0:
+            new_num = random.randint(1, 10)
+        num_list.append(new_num)
+    return num_list
+
+
+global max_value
+global min_value
+
+# set max_value & min_values
+max_value = 10
+min_value = 1
+
+def get_odd_int():
+    return random.randrange(min_value, max_value + 1, step=2)
+
+# does not generate random numbers without bias?
+def get_even_int():
+    return random.randint(min_value // 2 + 1, max_value // 2) * 2
+
+
+def create_list(list_len, is_odd):
+    num_list = [get_odd_int() if is_odd
+                else get_even_int() for i in range(list_len)]
+    return num_list
+
+print(create_list(15, False))
+print(create_list(15, True))
+
+
+
+
+print(my_func(2, -4))
+
+print(calc_exponents(5, 'dog'))
