@@ -64,6 +64,30 @@ print(create_list(15, True))
 
 
 
+# -------------------------------------------------------------------------------
+# snippet 3 - revised code: use in operator built-in, add Class
+class SomeClass:
+    def __init__(self, values):
+        self.values = values
+# Pull request 3
+def check_for_val(self, val):
+    """This member function checks to see if val exists in the class member
+    values and returns True if found"""
+    return val in self.values
+    
+m1 = SomeClass([91,33,45,66])
+print(check_for_val(m1, 33))
+
+# ------------------------------------------------------------------------------
+# Snippet 4 - revised code: use the .index() built-in
+def get_val_index(arr, val):
+    """Searches arr for val and returns the index if found, otherwise -1"""
+    return arr.index(val)
+    
+a1 = [99,33,44,1,5]
+print(get_val_index(a1,1))
+
+
 
 print(my_func(2, -4))
 
