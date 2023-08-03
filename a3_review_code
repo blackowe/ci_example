@@ -82,10 +82,8 @@ print(check_for_val(m1, 33))
 # Snippet 4 - revised code: use the .index() built-in
 def get_val_index(arr, val):
     """Searches arr for val and returns the index if found, otherwise -1"""
-    try:
-        return arr.index(val)
-    except ValueError:
-        return -1
+    try: return arr.index(val)
+    except ValueError: return -1
 
 # -------------------------------------------------------------------------------
 # snippet 5 - revised code: use list comprehension + sorted() fx to return copy of arr
