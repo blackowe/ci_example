@@ -87,6 +87,17 @@ def get_val_index(arr, val):
 a1 = [99,33,44,1,5]
 print(get_val_index(a1,1))
 
+# -------------------------------------------------------------------------------
+# snippet 5 - revised code: use list comprehension + sorted() fx to return copy of arr
+# Pull request 5
+def double_array(arr):
+    """sort the list (ascending) and double the value of each element of
+       the list and return without changing the state of the original list"""
+    # use list comprehension + sorted() to create copy of arr
+    return sorted(val*2 for val in arr)
+
+print(double_array([10,9,8,7,6,5,4,3,2,1,0]))
+
 
 
 print(my_func(2, -4))
