@@ -9,10 +9,10 @@ def calc_exponents(base, power):
     """Calculates exponents using 'base' and 'power' value inputs.
 
     Args:
-        base: The value to be multipled by 'power' number of times.
-        power: The amount of times 'base' will be multiples by itself.
+        base(int): The value to be multipled by 'power' number of times.
+        power(int): The amount of times 'base' will be multiples by itself.
     Returns:
-        The computation result ofbase^power
+        The computation result of base^power
     """
     return base**power
 # ---------------------------------------------------------------
@@ -82,6 +82,12 @@ print(check_for_val(m1, 33))
 # Snippet 4 - revised code: use the .index() built-in
 def get_val_index(arr, val):
     """Searches arr for val and returns the index if found, otherwise -1"""
+    Args:
+        arr(list): An array of integers which will be searched
+        val(int): An integer value that will be the target of the search
+    Returns:
+        An index(int) position within the 'arr' where the target value is located, or -1 if value not found.
+    """
     try: return arr.index(val)
     except ValueError: return -1
 
@@ -91,13 +97,13 @@ def get_val_index(arr, val):
 def double_array(arr):
     """sort the list (ascending) and double the value of each element of
        the list and return without changing the state of the original list"""
+    Args:
+        arr(list): An array of integers
+    Returns:
+        An array of integers ascendingly sorted with values doubled from the original array.
+    """
     # use list comprehension + sorted() to create copy of arr
     return sorted(val*2 for val in arr)
 
 print(double_array([10,9,8,7,6,5,4,3,2,1,0]))
 
-
-
-print(my_func(2, -4))
-
-print(calc_exponents(5, 'dog'))
