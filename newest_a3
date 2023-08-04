@@ -1,0 +1,142 @@
+import random
+
+
+# Pull request 2
+def create_odds(num):
+    """Creates a list of len(num) of random odd numbers between 1 and 1000"""
+    num_list = []
+    for i in range(0, num):
+        new_num = 2
+        while new_num % 2 == 0:
+            new_num = random.randint(1, 10)
+        num_list.append(new_num)
+    return num_list
+
+
+def create_evens(num):
+    """Creates a list of len(num) of random even numbers between 1 and 1000"""
+    num_list = []
+    for i in range(0, num):
+        new_num = 1
+        while new_num % 2 != 0:
+            new_num = random.randint(1, 10)
+        num_list.append(new_num)
+    return num_list
+
+#print(create_evens(6))
+#print(create_odds(7))
+
+from random import randrange
+
+"""
+
+"""
+def get_odd_int():
+    """ Returns a random odd integer of range 1-1000. """
+    return randrange(1, 1001, 2)
+
+def get_even_int():
+    """ Returns a random even integer of range 1-1000. """
+    return randrange(2, 1001, 2)
+
+def create_list(list_len, is_odd):
+    """Creates.
+    Args:
+        base(int): The value to be multipled by 'power' number of times.
+        power(int): The amount of times 'base' will be multiples by itself.
+    Returns:
+        The computation result of base^power.
+    """
+    num_list = [get_odd_int() if is_odd
+                else get_even_int() for i in range(list_len)]
+    return num_list
+
+
+#attempt 2
+from random import randrange
+def creat_list_2(list_len, is_odd):
+    """Creates a list of length 'list_len' of random even or odd numbers between 1 and 1000. 
+    Args:
+        list_len(int): The length of the list to be returned.
+        is_odd(bool): True - all values will be odd. False - all values will be even.
+    Returns:
+        A random list of either even or odd values in the range of 1-1000.
+    """
+    start = 1 if is_odd else 2
+    return [randrange(start, 1001, 2) for i in range(list_len)] 
+        
+
+print(creat_list_2(15, False))
+print(creat_list_2(15, True))
+
+# snippet 1
+def my_func(x, y):
+
+    return x ** y
+
+
+# snippet 1 - corrected code
+def calc_exponents(base, power):
+    """Calculates exponents using 'base' and 'power' value inputs.
+    Args:
+        base(int): The value to be multipled by 'power' number of times.
+        power(int): The amount of times 'base' will be multiples by itself.
+    Returns:
+        The computation result of base^power.
+    """
+    return base ** power
+
+# snippet 3 - revised code: use in operator built-in, add Class
+class SomeClass:
+    """Doc string describing usage of SomeClass"""
+    def __init__(self, values):
+        self.values = values
+# Pull request 3
+def check_for_val(self, val):
+    """This member function checks to see if val exists in the class member
+    values and returns True if found
+    Args:
+        self(object): An instance of the SomeClass object.
+        val(int): The target value to be searched for in self.values.
+    Returns:
+        Bool: True if target 'val' is present, otherwise False. 
+    """
+    return val in self.values
+    
+m1 = SomeClass([91,33,45,66])
+#print(check_for_val(m1, 0))
+
+
+# ------------------------------------------------------------------------------
+# Snippet 4 - revised code: use the .index() built-in
+def get_val_index(arr, val):
+    """Searches arr for val and returns the index if found, otherwise -1
+    Args:
+        arr(list): An array of integers to be searched.
+        val(int): An integer value that will be the target of the search.
+    Returns:
+        An index(int) position within the 'arr' or -1 if value not found.
+    """
+    try:
+        return arr.index(val)
+    except ValueError:
+        return -1
+
+
+#print(get_val_index([99,321,320,11,-11,0,5,6], 11))
+
+# -------------------------------------------------------------------------------
+# snippet 5 - revised code: use list comprehension + sorted() fx to return copy of arr
+# Pull request 5
+def double_array(arr):
+    """sort the list (ascending) and double the value of each element of
+       the list and return without changing the state of the original list
+    Args:
+        arr(list): An array of integers.
+    Returns:
+        A new array of integers ascendingly sorted with each value doubled.
+    """
+    # use list comprehension + sorted() to create copy of arr
+    return sorted(val * 2 for val in arr)
+
+#print(double_array([10,9,8,7,6,5,4,3,2,1,0]))
